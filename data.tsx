@@ -1,9 +1,7 @@
 // data.ts
 import { SignData, Category, LanguageOption } from "./types";
 
-/* -----------------------------
-   语言选项
------------------------------ */
+/* -------------------- 语言选项 -------------------- */
 export const languageOptions: LanguageOption[] = [
   { code: "ko", name: "한국어", label: "한" },
   { code: "en", name: "English", label: "EN" },
@@ -11,12 +9,10 @@ export const languageOptions: LanguageOption[] = [
   { code: "zh", name: "中文", label: "中" }
 ];
 
-/* -----------------------------
-   禁止标志
------------------------------ */
+/* -------------------- 禁止标志 -------------------- */
 export const prohibitionSigns: SignData[] = [
   {
-    icon: "/no-smoking.png.png",
+    icon: "/no-smoking.png",
     char: "금연",
     name: "No Smoking",
     ko: "금연",
@@ -25,7 +21,7 @@ export const prohibitionSigns: SignData[] = [
     zh: "禁止吸烟"
   },
   {
-    icon: "/no-touch.png.png",
+    icon: "/no-touch.png",
     char: "손대지 마시오",
     name: "Do Not Touch",
     ko: "만지지 마시오",
@@ -34,7 +30,7 @@ export const prohibitionSigns: SignData[] = [
     zh: "禁止接触"
   },
   {
-    icon: "/no-leaning.png.png",
+    icon: "/no-leaning.png",
     char: "기대지 마시오",
     name: "No Leaning",
     ko: "기대지 마시오",
@@ -43,7 +39,7 @@ export const prohibitionSigns: SignData[] = [
     zh: "禁止倚靠"
   },
   {
-    icon: "/no-pushing.png.png",
+    icon: "/no-pushing.png",
     char: "밀지 마시오",
     name: "No Pushing",
     ko: "밀지 마시오",
@@ -52,7 +48,7 @@ export const prohibitionSigns: SignData[] = [
     zh: "禁止推挤"
   },
   {
-    icon: "/no-climbing.png.png",
+    icon: "/no-climbing.png",
     char: "올라가지 마시오",
     name: "No Climbing",
     ko: "올라가지 마시오",
@@ -62,12 +58,10 @@ export const prohibitionSigns: SignData[] = [
   }
 ];
 
-/* -----------------------------
-   ⚠️ 警告标志
------------------------------ */
+/* -------------------- 警告标志 -------------------- */
 export const warningSigns: SignData[] = [
   {
-    icon: "/warning-head-injury.png.png",
+    icon: "/warning-head-injury.png",
     char: "머리 조심",
     name: "Watch Your Head",
     ko: "머리 조심",
@@ -76,16 +70,16 @@ export const warningSigns: SignData[] = [
     zh: "当心碰头"
   },
   {
-    icon: "/warning-slippery.png.png",
+    icon: "/warning-slippery.png",
     char: "미끄럼 주의",
-    name: "Slippery Surface",
+    name: "Slippery",
     ko: "미끄럼 주의",
     en: "Slippery Surface",
     jp: "滑り注意",
     zh: "小心地滑"
   },
   {
-    icon: "/warning-step-hazard.png.png",
+    icon: "/warning-step-hazard.png",
     char: "문지방 조심",
     name: "Step Hazard",
     ko: "문지방 조심",
@@ -94,7 +88,7 @@ export const warningSigns: SignData[] = [
     zh: "当心台阶"
   },
   {
-    icon: "/warning-trip-hazard.png.png",
+    icon: "/warning-trip-hazard.png",
     char: "걸림 주의",
     name: "Trip Hazard",
     ko: "걸림 주의",
@@ -104,9 +98,7 @@ export const warningSigns: SignData[] = [
   }
 ];
 
-/* -----------------------------
-   ℹ️ 信息标志
------------------------------ */
+/* -------------------- 信息标志 -------------------- */
 export const infoSigns: SignData[] = [
   {
     icon: "/info-restroom.png",
@@ -128,18 +120,7 @@ export const infoSigns: SignData[] = [
   }
 ];
 
-/* -----------------------------
-   分类菜单（一定需要）
------------------------------ */
-export const categories = [
-  { id: "prohibition", ko: "금지 표지", en: "Prohibition", jp: "禁止", zh: "禁止" },
-  { id: "warning", ko: "경고 표지", en: "Warning", jp: "警告", zh: "警告" },
-  { id: "information", ko: "안내 표지", en: "Information", jp: "案内", zh: "信息" }
-];
-
-/* -----------------------------
-   分类颜色配置
------------------------------ */
+/* -------------------- 分类配置 -------------------- */
 export const categoryConfig: Record<Category, any> = {
   prohibition: {
     color: { bg: "#FF0000", border: "#FF0000", text: "#000000" }
@@ -152,11 +133,12 @@ export const categoryConfig: Record<Category, any> = {
   }
 };
 
-/* -----------------------------
-   生成器选项
------------------------------ */
+/* -------------------- 可选配置 -------------------- */
 export const configOptions = {
   size: ["small", "medium", "large"],
   borderStyle: ["round", "square"],
   direction: ["horizontal", "vertical"]
 };
+
+/* -------------------- 分类数组 -------------------- */
+export const categories: Category[] = ["prohibition", "warning", "information"];
