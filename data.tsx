@@ -1,4 +1,4 @@
-// data.tsx
+// data.ts
 import { SignData, Category, LanguageOption } from "./types";
 
 // --------------------------------------
@@ -156,23 +156,10 @@ export const categoryConfig: Record<Category, any> = {
 };
 
 // --------------------------------------
-// 标志生成器设置
+// 标志生成器参数
 // --------------------------------------
 export const configOptions = {
   size: ["small", "medium", "large"],
   borderStyle: ["round", "square"],
   direction: ["horizontal", "vertical"]
 };
-
-// --------------------------------------
-// 导出
-// --------------------------------------
-export {
-  prohibitionSigns,
-  warningSigns,
-  infoSigns,
-  languageOptions,
-  categoryConfig,
-  configOptions
-};
-
