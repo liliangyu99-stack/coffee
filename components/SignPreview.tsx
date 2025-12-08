@@ -1,74 +1,85 @@
 import React from "react";
-import { SignData, Category, Config } from "../types";
+import { SignData, Config, Category } from "../types";
 
 interface SignPreviewProps {
   category: Category;
-  sign: SignData;
+  sign: SignData | null;
   config: Config;
 }
 
+/* ------ 统一图标尺寸 ------ */
+const ICON_SIZE = 120;
+
 const SignPreview: React.FC<SignPreviewProps> = ({ category, sign, config }) => {
+  if (!sign) return null;
 
-  // 显示的图标路径
-  const iconPath = sign.icon;
-
-  // 风格颜色
-  const colors = {
-    prohibition: {
-      bg: "#ffffff",
-      border: "#d32f2f",
-      icon: "#d32f2f",
-      text: "#000000"
-    },
-    warning: {
-      bg: "#fff8e1",
-      border: "#f9a825",
-      icon: "#000000",
-      text: "#000000"
-    },
-    information: {
-      bg: "#e3f2fd",
-      border: "#1565c0",
-      icon: "#1565c0",
-      text: "#000000"
-    }
+  /* 分类颜色 */
+  const colorSet = {
+    prohibition: { bg: "#ffffff", border: "#FF0000", text: "#000000" },
+    warning: { bg: "#ffffff", border: "#F7A600", text: "#000000" },
+    information: { bg: "#ffffff", border: "#0066CC", text: "#000000" }
   }[category];
 
-  // 用于外框样式
-  const borderRadius = config.borderStyle === "round" ? "50%" : "6px";
+  /* 语言切换文本 */
+  const getText = () => {
+    switch (config.language) {
+      case "ko": return sign.ko;
+      case "en": return sign.en;
+      case "jp": return sign.jp;
+      case "zh": return sign.zh;
+      default: return sign.ko;
+    }
+  };
+
+  const layout = config.direction === "horizontal" ? "flex-row" : "flex-col";
 
   return (
-    <div className="w-full flex flex-col items-center justify-center p-4">
-      {/* 外框 */}
+    <div className="flex flex-col items-center gap-4 mt-10">
+      {/* 标志框 */}
       <div
-        className="flex items-center justify-center shadow-lg transition-all"
+        className="flex items-center justify-center shadow-xl transition-all"
         style={{
-          width: config.size === "large" ? 280 : config.size === "medium" ? 220 : 160,
-          height: config.size === "large" ? 280 : config.size === "medium" ? 220 : 160,
-          backgroundColor: colors.bg,
-          border: `14px solid ${colors.border}`,
-          borderRadius: borderRadius
+          width: 200,
+          height: 200,
+          borderRadius: config.borderStyle === "round" ? 16 : 0,
+          border: `10px solid ${colorSet.border}`,
+          background: colorSet.bg
         }}
       >
         {/* 图标 */}
         <img
-          src={iconPath}
+          src={sign.icon}
           alt={sign.name}
-          className="w-3/4 h-3/4 object-contain pointer-events-none select-none"
+          style={{
+            width: ICON_SIZE,
+            height: ICON_SIZE,
+            objectFit: "contain"
+          }}
         />
       </div>
 
-      {/* 名称文字 */}
-      <div className="mt-2 text-center">
-        <p className="text-lg font-bold" style={{ color: colors.text }}>
-          {sign.ko}
-        </p>
-        <p className="text-sm opacity-70" style={{ color: colors.text }}>
+      {/* 文本部分 */}
+      <div className={`flex ${layout} items-center gap-2`}>
+
+        {/* 主语言 */}
+        <div
+          className="text-xl font-bold"
+          style={{ color: colorSet.text }}
+        >
+          {getText()}
+        </div>
+
+        {/* 英文固定显示在下面（如果选择 vertical） */}
+        <div
+          className="text-sm opacity-70"
+          style={{ color: colorSet.text }}
+        >
           {sign.en}
-        </p>
+        </div>
       </div>
     </div>
   );
 };
 
 export default SignPreview;
+
