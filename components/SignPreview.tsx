@@ -1,43 +1,71 @@
 import React from "react";
+import { SignData, Category, Config } from "../types";
 
 interface SignPreviewProps {
-  category: string;
-  sign: any;
-  config: any;
+  category: Category;
+  sign: SignData;
+  config: Config;
 }
 
-const SignPreview: React.FC<SignPreviewProps> = ({ category, sign }) => {
-  
-  // 图片路径自动指向 public/{id}.png
-  const imgSrc = `/${sign.id}.png`;
+const SignPreview: React.FC<SignPreviewProps> = ({ category, sign, config }) => {
 
-  // 根据分类决定背景形状颜色
-  const isWarning = category === "warning";
+  // 显示的图标路径
+  const iconPath = sign.icon;
+
+  // 风格颜色
+  const colors = {
+    prohibition: {
+      bg: "#ffffff",
+      border: "#d32f2f",
+      icon: "#d32f2f",
+      text: "#000000"
+    },
+    warning: {
+      bg: "#fff8e1",
+      border: "#f9a825",
+      icon: "#000000",
+      text: "#000000"
+    },
+    information: {
+      bg: "#e3f2fd",
+      border: "#1565c0",
+      icon: "#1565c0",
+      text: "#000000"
+    }
+  }[category];
+
+  // 用于外框样式
+  const borderRadius = config.borderStyle === "round" ? "50%" : "6px";
 
   return (
-    <div
-      className="flex flex-col items-center justify-center shadow-lg rounded-xl p-4 bg-white"
-      style={{
-        width: "260px",
-      }}
-    >
+    <div className="w-full flex flex-col items-center justify-center p-4">
+      {/* 外框 */}
       <div
-        className="flex items-center justify-center"
+        className="flex items-center justify-center shadow-lg transition-all"
         style={{
-          width: "180px",
-          height: "180px",
+          width: config.size === "large" ? 280 : config.size === "medium" ? 220 : 160,
+          height: config.size === "large" ? 280 : config.size === "medium" ? 220 : 160,
+          backgroundColor: colors.bg,
+          border: `14px solid ${colors.border}`,
+          borderRadius: borderRadius
         }}
       >
+        {/* 图标 */}
         <img
-          src={imgSrc}
+          src={iconPath}
           alt={sign.name}
-          className="w-full h-full object-contain"
+          className="w-3/4 h-3/4 object-contain pointer-events-none select-none"
         />
       </div>
 
+      {/* 名称文字 */}
       <div className="mt-2 text-center">
-        <p className="text-lg font-bold">{sign.char}</p>
-        <p className="text-sm opacity-70">{sign.name}</p>
+        <p className="text-lg font-bold" style={{ color: colors.text }}>
+          {sign.ko}
+        </p>
+        <p className="text-sm opacity-70" style={{ color: colors.text }}>
+          {sign.en}
+        </p>
       </div>
     </div>
   );
