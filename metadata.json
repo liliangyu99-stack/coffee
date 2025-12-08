@@ -1,0 +1,5 @@
+{
+  "name": "Safety Sign Generator",
+  "description": "An ISO-standard safety sign generator allowing users to create custom prohibition, warning, and information signs with multi-language support.",
+  "requestFramePermissions": []
+}
