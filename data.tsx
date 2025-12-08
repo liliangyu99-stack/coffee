@@ -1,9 +1,9 @@
 // data.ts
 import { SignData, Category, LanguageOption } from "./types";
 
-// --------------------------------------
-// 语言选项
-// --------------------------------------
+/* -----------------------------
+   语言选项
+----------------------------- */
 export const languageOptions: LanguageOption[] = [
   { code: "ko", name: "한국어", label: "한" },
   { code: "en", name: "English", label: "EN" },
@@ -11,9 +11,9 @@ export const languageOptions: LanguageOption[] = [
   { code: "zh", name: "中文", label: "中" }
 ];
 
-// --------------------------------------
-// 禁止标志
-// --------------------------------------
+/* -----------------------------
+   禁止标志
+----------------------------- */
 export const prohibitionSigns: SignData[] = [
   {
     icon: "/no-smoking.png.png",
@@ -62,9 +62,9 @@ export const prohibitionSigns: SignData[] = [
   }
 ];
 
-// --------------------------------------
-// 警告标志
-// --------------------------------------
+/* -----------------------------
+   警告标志
+----------------------------- */
 export const warningSigns: SignData[] = [
   {
     icon: "/warning-head-injury.png.png",
@@ -78,7 +78,7 @@ export const warningSigns: SignData[] = [
   {
     icon: "/warning-slippery.png.png",
     char: "미끄럼 주의",
-    name: "Slippery",
+    name: "Slippery Surface",
     ko: "미끄럼 주의",
     en: "Slippery Surface",
     jp: "滑り注意",
@@ -104,9 +104,9 @@ export const warningSigns: SignData[] = [
   }
 ];
 
-// --------------------------------------
-// 信息标志
-// --------------------------------------
+/* -----------------------------
+   信息标志（指示类）
+----------------------------- */
 export const infoSigns: SignData[] = [
   {
     icon: "/info-restroom.png",
@@ -128,9 +128,39 @@ export const infoSigns: SignData[] = [
   }
 ];
 
-// --------------------------------------
-// 分类颜色配置
-// --------------------------------------
+/* -----------------------------
+   分类菜单（你的页面需要它）
+----------------------------- */
+export const categories = [
+  {
+    id: "prohibition",
+    label: "禁止标志",
+    ko: "금지 표지",
+    en: "Prohibition",
+    jp: "禁止",
+    zh: "禁止"
+  },
+  {
+    id: "warning",
+    label: "警告标志",
+    ko: "경고 표지",
+    en: "Warning",
+    jp: "警告",
+    zh: "警告"
+  },
+  {
+    id: "information",
+    label: "信息标志",
+    ko: "안내 표지",
+    en: "Information",
+    jp: "案内",
+    zh: "信息"
+  }
+];
+
+/* -----------------------------
+   分类颜色配置
+----------------------------- */
 export const categoryConfig: Record<Category, any> = {
   prohibition: {
     color: {
@@ -155,11 +185,24 @@ export const categoryConfig: Record<Category, any> = {
   }
 };
 
-// --------------------------------------
-// 标志生成器参数
-// --------------------------------------
+/* -----------------------------
+   生成器可选参数
+----------------------------- */
 export const configOptions = {
   size: ["small", "medium", "large"],
   borderStyle: ["round", "square"],
   direction: ["horizontal", "vertical"]
+};
+
+/* -----------------------------
+   整合导出（不会重复）
+----------------------------- */
+export {
+  prohibitionSigns,
+  warningSigns,
+  infoSigns,
+  languageOptions,
+  categoryConfig,
+  configOptions,
+  categories
 };
