@@ -63,7 +63,7 @@ export const prohibitionSigns: SignData[] = [
 ];
 
 /* -----------------------------
-   警告标志
+   ⚠️ 警告标志
 ----------------------------- */
 export const warningSigns: SignData[] = [
   {
@@ -105,7 +105,7 @@ export const warningSigns: SignData[] = [
 ];
 
 /* -----------------------------
-   信息标志（指示类）
+   ℹ️ 信息标志
 ----------------------------- */
 export const infoSigns: SignData[] = [
   {
@@ -129,33 +129,12 @@ export const infoSigns: SignData[] = [
 ];
 
 /* -----------------------------
-   分类菜单（你的页面需要它）
+   分类菜单（一定需要）
 ----------------------------- */
 export const categories = [
-  {
-    id: "prohibition",
-    label: "禁止标志",
-    ko: "금지 표지",
-    en: "Prohibition",
-    jp: "禁止",
-    zh: "禁止"
-  },
-  {
-    id: "warning",
-    label: "警告标志",
-    ko: "경고 표지",
-    en: "Warning",
-    jp: "警告",
-    zh: "警告"
-  },
-  {
-    id: "information",
-    label: "信息标志",
-    ko: "안내 표지",
-    en: "Information",
-    jp: "案内",
-    zh: "信息"
-  }
+  { id: "prohibition", ko: "금지 표지", en: "Prohibition", jp: "禁止", zh: "禁止" },
+  { id: "warning", ko: "경고 표지", en: "Warning", jp: "警告", zh: "警告" },
+  { id: "information", ko: "안내 표지", en: "Information", jp: "案内", zh: "信息" }
 ];
 
 /* -----------------------------
@@ -163,46 +142,21 @@ export const categories = [
 ----------------------------- */
 export const categoryConfig: Record<Category, any> = {
   prohibition: {
-    color: {
-      bg: "#FF0000",
-      border: "#FF0000",
-      text: "#000000"
-    }
+    color: { bg: "#FF0000", border: "#FF0000", text: "#000000" }
   },
   warning: {
-    color: {
-      bg: "#F7A600",
-      border: "#F7A600",
-      text: "#000000"
-    }
+    color: { bg: "#F7A600", border: "#F7A600", text: "#000000" }
   },
   information: {
-    color: {
-      bg: "#0066CC",
-      border: "#0066CC",
-      text: "#FFFFFF"
-    }
+    color: { bg: "#0066CC", border: "#0066CC", text: "#FFFFFF" }
   }
 };
 
 /* -----------------------------
-   生成器可选参数
+   生成器选项
 ----------------------------- */
 export const configOptions = {
   size: ["small", "medium", "large"],
   borderStyle: ["round", "square"],
   direction: ["horizontal", "vertical"]
-};
-
-/* -----------------------------
-   整合导出（不会重复）
------------------------------ */
-export {
-  prohibitionSigns,
-  warningSigns,
-  infoSigns,
-  languageOptions,
-  categoryConfig,
-  configOptions,
-  categories
 };
