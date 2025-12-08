@@ -1,4 +1,4 @@
-// data.ts
+// data.tsx
 import { SignData, Category, LanguageOption } from "./types";
 
 // --------------------------------------
@@ -175,3 +175,4 @@ export {
   categoryConfig,
   configOptions
 };
+
