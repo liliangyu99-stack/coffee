@@ -1,13 +1,19 @@
 // data.ts
 import { SignData, Category, LanguageOption } from "./types";
 
+// --------------------------------------
 // 语言选项
+// --------------------------------------
 export const languageOptions: LanguageOption[] = [
   { code: "ko", name: "한국어", label: "한" },
   { code: "en", name: "English", label: "EN" },
   { code: "jp", name: "日本語", label: "日" },
   { code: "zh", name: "中文", label: "中" }
-];// 禁止标志
+];
+
+// --------------------------------------
+// 禁止标志
+// --------------------------------------
 export const prohibitionSigns: SignData[] = [
   {
     icon: "/no-smoking.png.png",
@@ -55,7 +61,10 @@ export const prohibitionSigns: SignData[] = [
     zh: "禁止攀爬"
   }
 ];
+
+// --------------------------------------
 // 警告标志
+// --------------------------------------
 export const warningSigns: SignData[] = [
   {
     icon: "/warning-head-injury.png.png",
@@ -94,7 +103,10 @@ export const warningSigns: SignData[] = [
     zh: "绊倒危险"
   }
 ];
-// 信息（指示）标志 —— 自行扩展
+
+// --------------------------------------
+// 信息标志
+// --------------------------------------
 export const infoSigns: SignData[] = [
   {
     icon: "/info-restroom.png",
@@ -114,7 +126,11 @@ export const infoSigns: SignData[] = [
     jp: "出口",
     zh: "出口"
   }
-];// 分类配置
+];
+
+// --------------------------------------
+// 分类颜色配置
+// --------------------------------------
 export const categoryConfig: Record<Category, any> = {
   prohibition: {
     color: {
@@ -135,17 +151,23 @@ export const categoryConfig: Record<Category, any> = {
       bg: "#0066CC",
       border: "#0066CC",
       text: "#FFFFFF"
+    }
+  }
+};
 
-      // 标志生成器可选参数
+// --------------------------------------
+// 标志生成器设置
+// --------------------------------------
 export const configOptions = {
   size: ["small", "medium", "large"],
   borderStyle: ["round", "square"],
   direction: ["horizontal", "vertical"]
 };
 
-    }
-  }
-};export {
+// --------------------------------------
+// 导出
+// --------------------------------------
+export {
   prohibitionSigns,
   warningSigns,
   infoSigns,
@@ -153,6 +175,3 @@ export const configOptions = {
   categoryConfig,
   configOptions
 };
-
-
-
