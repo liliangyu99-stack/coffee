@@ -192,5 +192,36 @@ export const cafeSigns: SignData[] = [
     jp: "ガラス扉注意",
     zh: "当心玻璃门"
   }
+];/* -------------------- 分类（用于界面显示） -------------------- */
+export const categories = [
+  {
+    id: "prohibition",
+    name: "금지 표지",
+    sub: "Prohibition Signs",
+    color: "red",
+    icon: "🚫"
+  },
+  {
+    id: "warning",
+    name: "경고 표지",
+    sub: "Warning Signs",
+    color: "yellow",
+    icon: "⚠️"
+  },
+  {
+    id: "information",
+    name: "안내 표지",
+    sub: "Information Signs",
+    color: "blue",
+    icon: "ℹ️"
+  },
+  {
+    id: "cafe",
+    name: "카페 / 매장용",
+    sub: "Cafe Signs",
+    color: "black",
+    icon: "☕"
+  }
 ];
+
 
