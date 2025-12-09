@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
-import { Standard, Category } from './types';
+import React, { useState } from "react";
+import { Standard, Category } from "./types";
 
-// 关键修复：必须写上 .tsx 扩展名（Vercel 的 Linux 系统不能自动识别）
-import HomeView from './views/HomeView.tsx';
-import CategorySelectionView from './views/CategorySelectionView.tsx';
-import GeneratorView from './views/GeneratorView.tsx';
+import HomeView from "./views/HomeView";
+import CategorySelectionView from "./views/CategorySelectionView";
+import GeneratorView from "./views/GeneratorView";
 
+/**  
+ * App 主组件  
+ * - 选择标准（ISO7010 或 Cafe）  
+ * - 选择类别（禁止 / 警告 / 信息）  
+ * - 生成标志页面  
+ */
 const App: React.FC = () => {
   const [standard, setStandard] = useState<Standard | null>(null);
   const [category, setCategory] = useState<Category | null>(null);
@@ -15,10 +20,12 @@ const App: React.FC = () => {
     setCategory(null);
   };
 
+  // Step 1 — 选择标准
   if (!standard) {
     return <HomeView onSelectStandard={setStandard} />;
   }
 
+  // Step 2 — 选择类别
   if (!category) {
     return (
       <CategorySelectionView
@@ -28,6 +35,7 @@ const App: React.FC = () => {
     );
   }
 
+  // Step 3 — 生成标志
   return (
     <GeneratorView
       standard={standard}
