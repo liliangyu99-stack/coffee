@@ -118,4 +118,79 @@ export const infoSigns: SignData[] = [
     ja: "出口", // ★
     zh: "出口"
   }
+];/* -------------------- 咖啡店专用标志 -------------------- */
+export const cafeSigns: SignData[] = [
+  {
+    icon: "/cafe/sign-01.png",
+    char: "기대지 마세요",
+    name: "Do Not Lean",
+    ko: "기대지 마세요",
+    en: "Do Not Lean",
+    jp: "寄りかからないでください",
+    zh: "禁止倚靠"
+  },
+  {
+    icon: "/cafe/sign-02.png",
+    char: "밀지 마세요",
+    name: "Do Not Push",
+    ko: "밀지 마세요",
+    en: "Do Not Push",
+    jp: "押さないでください",
+    zh: "禁止推动"
+  },
+  {
+    icon: "/cafe/sign-03.png",
+    char: "올라가지 마세요",
+    name: "No Climbing",
+    ko: "올라가지 마세요",
+    en: "No Climbing",
+    jp: "登らないでください",
+    zh: "禁止攀爬"
+  },
+  {
+    icon: "/cafe/sign-04.png",
+    char: "뛰지 마세요",
+    name: "No Running",
+    ko: "뛰지 마세요",
+    en: "No Running",
+    jp: "走らないでください",
+    zh: "禁止奔跑"
+  },
+  {
+    icon: "/cafe/sign-05.png",
+    char: "미끄럼 주의",
+    name: "Slippery",
+    ko: "미끄럼 주의",
+    en: "Slippery",
+    jp: "滑り注意",
+    zh: "小心地滑"
+  },
+  {
+    icon: "/cafe/sign-06.png",
+    char: "걸림 주의",
+    name: "Trip Hazard",
+    ko: "걸림 주의",
+    en: "Trip Hazard",
+    jp: "つまずき注意",
+    zh: "当心绊倒"
+  },
+  {
+    icon: "/cafe/sign-07.png",
+    char: "추락 주의",
+    name: "Fall Hazard",
+    ko: "추락 주의",
+    en: "Fall Hazard",
+    jp: "転落注意",
+    zh: "当心坠落"
+  },
+  {
+    icon: "/cafe/sign-08.png",
+    char: "문 조심",
+    name: "Watch Glass Door",
+    ko: "문 조심",
+    en: "Watch Glass Door",
+    jp: "ガラス扉注意",
+    zh: "当心玻璃门"
+  }
 ];
+
