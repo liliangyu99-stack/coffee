@@ -5,7 +5,7 @@ import { SignData, Category, LanguageOption } from "./types";
 export const languageOptions: LanguageOption[] = [
   { code: "ko", name: "한국어", label: "한" },
   { code: "en", name: "English", label: "EN" },
-  { code: "jp", name: "日本語", label: "日" },
+  { code: "ja", name: "日本語", label: "日" }, // ★ 修改 jp → ja
   { code: "zh", name: "中文", label: "中" }
 ];
 
@@ -17,7 +17,7 @@ export const prohibitionSigns: SignData[] = [
     name: "No Smoking",
     ko: "금연",
     en: "No Smoking",
-    jp: "禁煙",
+    ja: "禁煙",        // ★ 修改 jp → ja
     zh: "禁止吸烟"
   },
   {
@@ -26,7 +26,7 @@ export const prohibitionSigns: SignData[] = [
     name: "Do Not Touch",
     ko: "만지지 마시오",
     en: "Do Not Touch",
-    jp: "触らないでください",
+    ja: "触らないでください", // ★
     zh: "禁止接触"
   },
   {
@@ -35,7 +35,7 @@ export const prohibitionSigns: SignData[] = [
     name: "No Leaning",
     ko: "기대지 마시오",
     en: "No Leaning",
-    jp: "寄りかかり禁止",
+    ja: "寄りかかり禁止", // ★
     zh: "禁止倚靠"
   },
   {
@@ -44,7 +44,7 @@ export const prohibitionSigns: SignData[] = [
     name: "No Pushing",
     ko: "밀지 마시오",
     en: "No Pushing",
-    jp: "押さないでください",
+    ja: "押さないでください", // ★
     zh: "禁止推挤"
   },
   {
@@ -53,7 +53,7 @@ export const prohibitionSigns: SignData[] = [
     name: "No Climbing",
     ko: "올라가지 마시오",
     en: "No Climbing",
-    jp: "登らないでください",
+    ja: "登らないでください", // ★
     zh: "禁止攀爬"
   }
 ];
@@ -66,7 +66,7 @@ export const warningSigns: SignData[] = [
     name: "Watch Your Head",
     ko: "머리 조심",
     en: "Watch Your Head",
-    jp: "頭上注意",
+    ja: "頭上注意", // ★
     zh: "当心碰头"
   },
   {
@@ -75,7 +75,7 @@ export const warningSigns: SignData[] = [
     name: "Slippery",
     ko: "미끄럼 주의",
     en: "Slippery Surface",
-    jp: "滑り注意",
+    ja: "滑り注意", // ★
     zh: "小心地滑"
   },
   {
@@ -84,7 +84,7 @@ export const warningSigns: SignData[] = [
     name: "Step Hazard",
     ko: "문지방 조심",
     en: "Step Hazard",
-    jp: "段差注意",
+    ja: "段差注意", // ★
     zh: "当心台阶"
   },
   {
@@ -93,7 +93,7 @@ export const warningSigns: SignData[] = [
     name: "Trip Hazard",
     ko: "걸림 주의",
     en: "Trip Hazard",
-    jp: "つまずき注意",
+    ja: "つまずき注意", // ★
     zh: "绊倒危险"
   }
 ];
@@ -106,7 +106,7 @@ export const infoSigns: SignData[] = [
     name: "Restroom",
     ko: "화장실",
     en: "Restroom",
-    jp: "トイレ",
+    ja: "トイレ", // ★
     zh: "洗手间"
   },
   {
@@ -115,30 +115,7 @@ export const infoSigns: SignData[] = [
     name: "Exit",
     ko: "출구",
     en: "Exit",
-    jp: "出口",
+    ja: "出口", // ★
     zh: "出口"
   }
 ];
-
-/* -------------------- 分类配置 -------------------- */
-export const categoryConfig: Record<Category, any> = {
-  prohibition: {
-    color: { bg: "#FF0000", border: "#FF0000", text: "#000000" }
-  },
-  warning: {
-    color: { bg: "#F7A600", border: "#F7A600", text: "#000000" }
-  },
-  information: {
-    color: { bg: "#0066CC", border: "#0066CC", text: "#FFFFFF" }
-  }
-};
-
-/* -------------------- 可选配置 -------------------- */
-export const configOptions = {
-  size: ["small", "medium", "large"],
-  borderStyle: ["round", "square"],
-  direction: ["horizontal", "vertical"]
-};
-
-/* -------------------- 分类数组 -------------------- */
-export const categories: Category[] = ["prohibition", "warning", "information"];
